@@ -13,12 +13,19 @@ const player1BoardEl = document.querySelector('.player1Board');
 const player2BoardEl = document.querySelector('.player2Board');
 const player1NameEl = document.querySelector('.player1Name');
 const player2NameEl = document.querySelector('.player2Name');
+const btnCloseModal = document.querySelector('.close-modal');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
 
 let scores;
 let currentScore;
 let activePlayer;
 let playing;
-// Startig conditions
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
 
 const init = function () {
   scores = [0, 0];
@@ -105,3 +112,4 @@ btnHo.addEventListener('click', function () {
 });
 
 btnNew.addEventListener('click', init);
+btnCloseModal.addEventListener('click', closeModal);
